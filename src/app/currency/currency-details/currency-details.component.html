@@ -1,0 +1,30 @@
+<div class="container-fluid">
+<h3>{{currency?.attributes?.name}}</h3>
+<p>
+  Code: {{currency?.attributes?.code}}
+</p>
+<p>
+  Name: {{currency?.attributes?.name}}
+</p>
+<p>
+    Currency_type: {{currency?.attributes?.currency_type}}
+</p>
+<p>
+    Code_iso_numeric3: {{currency?.attributes?.code_iso_numeric3}}
+</p>
+<p>
+    Code_iso_alpha3: {{currency?.attributes?.code_iso_alpha3}}
+</p>
+<p>
+    Symbol: {{currency?.attributes?.symbol}}
+</p>
+<p>
+    Decimal_e: {{currency?.attributes?.decimal_e}}
+</p>
+<p>
+    Category: {{currency?.attributes?.category}}
+</p>
+
+<button class="btn " (click)="returnBack()">Go back</button>
+
+</div>

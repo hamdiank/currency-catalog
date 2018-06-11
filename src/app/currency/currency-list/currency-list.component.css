@@ -1,0 +1,44 @@
+mat-grid-tile {
+    background: lightgray;
+    cursor: pointer;
+  }
+
+  h4 {
+    text-align: center;
+    font-size: 15px
+  }
+
+  select {
+
+    border: 0 !important;
+    background: dimgrey;
+    background-image: none;
+  }
+  select {
+    margin: 0;
+    width: 70px;
+    height: 38px;
+    color: #fff;
+    cursor: pointer;
+  }
+.filter-options{
+  display: flex;
+}
+.pagination-options{
+  display: flex;
+  float: right;
+}
+ul{
+  margin: 1%;
+}
+li {list-style-type: none;}
+li:before {
+	content: "- "; /* on affiche une chaîne de caractère */
+}
+/deep/ .page-item.active .page-link { background-color: rgb(158, 152, 152) !important; 
+  border-color:#2c3e50 !important;
+  color: black !important;
+}
+/deep/ .page-link{
+  color: black !important;
+}

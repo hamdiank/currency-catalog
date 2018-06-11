@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <h1>Available currencies</h1>
+  <div class="filter-options">
+    <input type="search" placeholder="Search" [(ngModel)]="searchKeyword" (ngModelChange)="searchCurrencies()">
+    <div class="select">
+      <select [(ngModel)]="selectedOptionFilter" (change)="searchCurrencies()">
+        <option *ngFor="let filter of filters" [value]="filter">{{filter}}</option>
+      </select>
+    </div>
+  </div>
+  <mat-grid-list [cols]="numberCulumns" rowHeight="2:0.5" (window:resize)="onResize($event)">
+    <mat-grid-tile *ngFor="let currency of currencies" [routerLink]="['/currency', currency.id]">
+      <ul>
+        <li>ID: {{currency?.id}}</li>
+        <li>Type: {{currency?.attributes?.currency_type}}</li>
+        <li>Symbol: {{currency?.attributes?.symbol}}</li>
+      </ul>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="pagination-options">
+    <div class="select">
+      <select [(ngModel)]="selectedOptionPagination" (change)="setItemPerPage()">
+        <option *ngFor="let itemsOptions of itemsPerPageOptions" [value]="itemsOptions">{{itemsOptions}}</option>
+      </select>
+    </div>
+    <pagination *ngIf="paginator" [boundaryLinks]="true" [totalItems]="paginator.totalItems" [itemsPerPage]="selectedOptionPagination"
+      [maxSize]="paginator.maxSize" (pageChanged)="pageChanged($event)" firstText="&laquo;" lastText="&raquo;"></pagination>
+
+  </div>
+</div>
